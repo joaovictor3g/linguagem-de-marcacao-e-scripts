@@ -8,12 +8,12 @@ body {
   width: 100vw;
   min-height: 100vh;
   background: #2d3748;
-  font-family: Roboto, sans-serif;
+  font-family: "Russo One", sans-serif;
+  overflow-x: hidden;
 }
 
 header {
   width: 100%;
-  border-bottom: 1px solid gray;
   background: #171923;
 }
 
@@ -65,8 +65,28 @@ main {
   color: #ffffff;
 }
 
+td img,
+th img {
+  width: 100px;
+  object-fit: contain;
+}
+
+td:first-child {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .header-nav-links .sandwich-menu {
   display: none;
+}
+
+::-webkit-scrollbar {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background: #e53e3e;
 }
 
 @media (max-width: 768px) {

@@ -1,3 +1,11 @@
+:root {
+  --red: #e53e3e;
+  --gray: #2d3748;
+  --white: #ffffff;
+  --black: #000000;
+  --blue: #171923;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -7,14 +15,14 @@
 body {
   width: 100vw;
   min-height: 100vh;
-  background: #2d3748;
+  background: var(--gray);
   font-family: "Russo One", sans-serif;
   overflow-x: hidden;
 }
 
 header {
   width: 100%;
-  background: #171923;
+  background: var(--blue);
 }
 
 header .container {
@@ -27,7 +35,7 @@ header .container {
 }
 
 header .container h1 {
-  color: #e53e3e;
+  color: var(--red);
 }
 
 .header-nav-links ul {
@@ -37,8 +45,7 @@ header .container h1 {
 }
 
 .header-nav-links ul li a {
-  color: #ffffff;
-  /* text-decoration: none; */
+  color: var(--white);
   transition: filter 0.2s;
 }
 
@@ -53,16 +60,24 @@ main {
   padding: 10px 20px;
 }
 
+section + section {
+  margin-top: 40px;
+}
+
 .table {
   width: 100%;
   border-collapse: collapse;
   text-align: center;
 }
 
-.table th,
+.table th {
+  color: var(--red);
+  padding: 10px;
+}
+
 .table td {
   padding: 10px;
-  color: #ffffff;
+  color: var(--white);
 }
 
 td img,
@@ -76,17 +91,47 @@ td:first-child {
   text-transform: uppercase;
 }
 
+.section-form {
+}
+
+.section-form form {
+}
+
+form .control {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form .control input {
+  height: 50px;
+  border-radius: 4px;
+  border: 0;
+  padding: 0 8px;
+  font-size: 1rem;
+  background: var(--blue);
+  color: var(--white);
+}
+
+.control + .control {
+  margin-top: 8px;
+}
+
+form .control label {
+  color: var(--red);
+}
+
 .header-nav-links .sandwich-menu {
   display: none;
 }
 
 ::-webkit-scrollbar {
-  background: #000;
+  background: var(--black);
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 100px;
-  background: #e53e3e;
+  background: var(--red);
 }
 
 @media (max-width: 768px) {

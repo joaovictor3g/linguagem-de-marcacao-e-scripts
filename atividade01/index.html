@@ -42,6 +42,8 @@
 
     <main>
       <section>
+        <h1 class="section-title">Tabela de Personagens</h1>
+
         <table class="table" border="1px">
           <thead>
             <th><b>Nome</b></th>
@@ -58,45 +60,23 @@
             </tr>
             <tr>
               <td>Nami</td>
-              <td><img src="./assets/luffy.png" alt="" /></td>
+              <td><img src="./assets/nami.jpg" alt="" /></td>
               <td>18</td>
               <td>Sem fruta</td>
             </tr>
             <tr>
               <td>Zoro</td>
-              <td><img src="./assets/luffy.png" alt="" /></td>
+              <td><img src="./assets/zoro.jpg" alt="" /></td>
               <td>18</td>
               <td>Sem fruta</td>
-            </tr>
-            <tr>
-              <td>Usopp</td>
-              <td><img src="./assets/luffy.png" alt="" /></td>
-              <td>18</td>
-              <td>Sem fruta</td>
-            </tr>
-            <tr>
-              <td>Sanji</td>
-              <td><img src="./assets/luffy.png" alt="" /></td>
-              <td>18</td>
-              <td>Sem fruta</td>
-            </tr>
-            <tr>
-              <td>Chopper</td>
-              <td><img src="./assets/luffy.png" alt="" /></td>
-              <td>18</td>
-              <td>Hito Hito no Mi</td>
-            </tr>
-            <tr>
-              <td>Robin</td>
-              <td><img src="./assets/luffy.png" alt="" /></td>
-              <td>18</td>
-              <td>Hana Hana no Mi</td>
             </tr>
           </tbody>
         </table>
       </section>
 
       <section class="section-form">
+        <h1 class="section-title">Criar novo personagem</h1>
+
         <form action="https://www.w3schools.com/action_page.php">
           <div class="control">
             <label for="name">Nome:</label>
@@ -107,15 +87,48 @@
               maxlength="15"
             />
           </div>
+
           <div class="control">
-            <label for="age">Idade:</label>
+            <label for="name">Apenas leitura:</label>
+            <input type="text" readonly name="readonly" value="Zoro sola" />
+          </div>
+
+          <div class="control">
+            <label for="age">Nível de poder (entre 25.000 a 30.000):</label>
             <input
               type="number"
-              name="age"
-              placeholder="Insira sua idade"
+              name="number"
+              placeholder="Insira nível de poder"
               maxlength="15"
+              min="25000"
+              max="30000"
             />
           </div>
+
+          <div class="control row">
+            <input type="radio" name="hero" id="hero" />
+            <label for="hero">Hero</label>
+
+            <input type="radio" name="villain" id="villain" />
+            <label for="villain">Vilão</label>
+          </div>
+
+          <div class="control">
+            <div class="flex">
+              <input type="checkbox" name="human" id="human" />
+              <label for="human">Humano</label>
+            </div>
+            <div class="flex">
+              <input type="checkbox" name="fishman" id="fishman" />
+              <label for="fishman">Homem-Peixe</label>
+            </div>
+            <div class="flex">
+              <input type="checkbox" name="giant" id="giant" />
+              <label for="giant">Gigante</label>
+            </div>
+          </div>
+
+          <button type="submit">Enviar</button>
         </form>
       </section>
     </main>

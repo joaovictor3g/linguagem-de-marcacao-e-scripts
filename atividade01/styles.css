@@ -16,8 +16,14 @@ body {
   width: 100vw;
   min-height: 100vh;
   background: var(--gray);
-  font-family: "Russo One", sans-serif;
   overflow-x: hidden;
+}
+
+body,
+input,
+textarea,
+button {
+  font-family: "Russo One", sans-serif;
 }
 
 header {
@@ -65,6 +71,7 @@ section + section {
 }
 
 .table {
+  margin-top: 40px;
   width: 100%;
   border-collapse: collapse;
   text-align: center;
@@ -91,16 +98,31 @@ td:first-child {
   text-transform: uppercase;
 }
 
-.section-form {
+section .section-title {
+  color: var(--red);
 }
 
 .section-form form {
+  max-width: 600px;
+  width: 100%;
+  margin: 40px auto;
 }
 
 form .control {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+
+.control.row {
+  flex-direction: row;
+  align-items: center;
+}
+
+.control .flex {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 form .control input {
@@ -119,6 +141,24 @@ form .control input {
 
 form .control label {
   color: var(--red);
+}
+
+button[type="submit"] {
+  width: 200px;
+  padding: 20px;
+  border-radius: 7px;
+  border: 0;
+  background: var(--red);
+
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: filter 0.2s;
+}
+
+button[type="submit"]:hover {
+  filter: brightness(0.6);
 }
 
 .header-nav-links .sandwich-menu {

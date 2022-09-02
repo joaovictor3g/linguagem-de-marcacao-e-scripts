@@ -22,6 +22,14 @@ body {
   overflow-x: hidden;
 }
 
+::-webkit-scrollbar {
+  background-color: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--red-600);
+}
+
 button {
   cursor: pointer;
 }
@@ -46,6 +54,8 @@ header .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  padding: 0 0 0 1rem;
 }
 
 .navigator > ul {
@@ -63,7 +73,6 @@ li .list-item-button {
 
   font-weight: bold;
   font-size: 0.9rem;
-  border-right: 1px solid var(--gray-900);
 
   transition: background 0.5s, color 0.5s;
 }
@@ -71,6 +80,10 @@ li .list-item-button {
 li .list-item-button:hover {
   background-color: var(--white);
   color: var(--red-600);
+}
+
+li .list-item-button:not(last-child) {
+  border-right: 1px solid var(--gray-700);
 }
 
 .list-item-button .dropdown {
@@ -105,27 +118,34 @@ li .list-item-button:hover {
   width: 100%;
   text-align: left;
   border-radius: 5px;
+  padding: 0.5rem;
 }
 
 .dropdown-content li button:hover {
-  filter: brightness(0.6);
+  background-color: var(--red-600);
+  color: var(--white);
+  transition: background-color 0.5s, color 0.5s;
 }
 
 main {
   display: grid;
-  grid-template-columns: fit-content 1fr;
-  grid-template-rows: max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  gap: 20px;
 }
 
 aside {
   height: 100vh;
-  max-width: 200px;
-  width: 100%;
-  background: var(--gray-700);
+}
 
+aside .aside-wrapper {
+  max-width: 200px;
+  min-width: 100px;
+  width: 100%;
+  height: inherit;
   position: fixed;
   left: 0;
   bottom: 0;
+  background: var(--gray-700);
 
   display: flex;
   align-items: center;
@@ -139,7 +159,7 @@ aside .menu-list {
   cursor: pointer;
 
   background: var(--red-600);
-  width: 100%;
+  width: inherit;
 }
 
 .menu-list li {

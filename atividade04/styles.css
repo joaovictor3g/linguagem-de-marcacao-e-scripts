@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gray-300: #cbd5e0;
+  --gray-600: #4a5568;
+  --gray-900: #171923;
+
+  --purple-300: #b794f4;
+  --purple-700: #553c9a;
+  --purple-800: #44337a;
+
+  --white: #f2f2f2;
+}
+
+body {
+  font-family: "Rampart One", sans-serif;
+  color: var(--white);
+  background-color: var(--gray-900);
+
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  grid-template-areas:
+    "header header header"
+    "aside-left main aside-right"
+    "footer footer footer";
+}
+
+a {
+  font-family: Roboto, sans-serif;
+}
+
+header {
+  border-bottom: 1px solid var(--purple-300);
+  height: 54px;
+  grid-area: header;
+}
+
+header .header-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-wrapper .navigator {
+}
+
+.navigator ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  height: 54px;
+}
+
+.navigator ul li {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  transition: background-color 0.2s;
+}
+
+.navigator-list li a {
+  text-decoration: none;
+  color: var(--white);
+  width: inherit;
+  height: inherit;
+}
+
+.navigator-list li:hover {
+  background-color: var(--purple-700);
+}
+
+aside {
+  height: calc(100vh - 108px);
+  width: 200px;
+  background-color: var(--gray-600);
+}
+
+aside .aside-left-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+aside.aside-left {
+  grid-area: aside-left;
+}
+
+aside .aside-right-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+aside.aside-right {
+  grid-area: aside-right;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: main;
+}
+
+.section-gallery {
+  width: calc(450px + 2rem);
+  display: flex;
+
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+footer {
+  grid-area: footer;
+  height: 54px;
+  border-top: 1px solid var(--purple-300);
+}
+
+footer .footer-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-wrapper span {
+  color: var(--white);
+}

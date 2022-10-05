@@ -26,6 +26,20 @@ button {
   font-family: "Russo One", sans-serif;
 }
 
+input {
+  outline-color: var(--red);
+  outline-width: 1px;
+}
+
+button[type="submit"]:hover {
+  filter: brightness(0.6);
+}
+
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
 header {
   width: 100%;
   background: var(--blue);
@@ -155,10 +169,6 @@ button[type="submit"] {
   font-size: 1rem;
   cursor: pointer;
   transition: filter 0.2s;
-}
-
-button[type="submit"]:hover {
-  filter: brightness(0.6);
 }
 
 .header-nav-links .sandwich-menu {

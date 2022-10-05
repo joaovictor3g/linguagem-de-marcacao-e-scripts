@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 100vh;
+}
+
+.half {
+  background: #7159c1;
+  width: 50vw;
+  height: 50vh;
+
+  border-width: 10px;
+  border-color: #000;
+  border-style: dotted dashed;
+}

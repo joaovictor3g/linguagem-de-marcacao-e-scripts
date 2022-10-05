@@ -1,0 +1,32 @@
+.accordion-wrapper {
+  background-color: var(--green-700);
+  color: #fff;
+  padding: 1rem;
+}
+
+.accordion-item {
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.accordion-item:hover .accordion-content {
+  height: 240px;
+}
+
+.accordion-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+}
+
+.accordion-item:hover i {
+  transform: rotate(180deg);
+  transition: 0.5s;
+}
+
+.accordion-content {
+  height: 0;
+  transition: height 0.5s;
+  font-size: 1rem;
+}

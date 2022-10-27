@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <title>Feed</title>
+  </head>
+  <body>
+    <header class="feed-header">
+      <div class="feed-header--wrapper">
+        <h1>Feed</h1>
+
+        <div class="actions">
+          <button class="create-post">Postar</button>
+
+          <button class="hamburger-menu">
+            <i class="ph-list-light"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="feed-main">
+      <aside class="feed-main-aside">
+        <div class="feed-main-aside--wrapper"></div>
+      </aside>
+      <section class="feed-main-section"></section>
+    </main>
+
+    <div class="overlay">
+      <div class="modal">
+        <header class="modal-header">
+          <h3 class="modal-title">Crie seu novo post agora</h3>
+          <button class="close-modal">X</button>
+        </header>
+        <form class="create-post-form">
+          <label for="name">Nome:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            placeholder="Digite seu nome"
+          />
+          <label for="message">Mensagem:</label>
+          <input
+            type="text"
+            name="message"
+            id="message"
+            placeholder="Digite sua mensagem"
+          />
+
+          <button type="submit">Criar Post</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -95,4 +95,5 @@ async function handleChangeGroup(groupId) {
   await loadGroups();
   await loadMessages(groupId);
   scrollBottom();
+  toggleInputSendMessage();
 }

@@ -8,6 +8,11 @@ createMessageForm.addEventListener("submit", async (event) => {
 
   const formData = new FormData(event.target);
   const message = formData.get("message");
+
+  if (!message.trim()) {
+    return alert("Mensagem vazia!!");
+  }
+
   const newMessage = {
     nome: loggedUserIn,
     corpo: message,
@@ -24,6 +29,7 @@ createMessageForm.addEventListener("submit", async (event) => {
     });
 
     await loadMessages(currentGroupId);
+    scrollBottom();
 
     inputMessageEl.value = "";
   } catch (error) {

@@ -26,6 +26,10 @@ body {
   display: flex;
 }
 
+ul {
+  padding: 0;
+}
+
 /* aside styles */
 
 .aside-container {
@@ -39,15 +43,49 @@ body {
   position: fixed;
   left: 0;
   top: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.aside-wrapper .new-group-container {
+  width: 100%;
+  padding: 1rem;
+}
+
+.aside-wrapper .new-group {
+  width: 100%;
+
+  background-color: var(--green-100);
+  border: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  transition: filter 0.2s;
+}
+
+.aside-wrapper .new-group:hover {
+  filter: brightness(0.7);
 }
 
 .group {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   width: 100%;
   margin-top: 70px;
+}
+
+.group > span {
+  padding: 0 1rem;
+  color: var(--white);
 }
 
 .group .group-item {
@@ -62,7 +100,21 @@ body {
   transition: background-color 0.2s;
 }
 
-.group .group-item:hover {
+.group .group-item.active {
+  background-color: var(--green-100);
+}
+
+.group-item.active .name {
+  color: var(--black-900);
+}
+
+.group .group-item .image img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.group .group-item:not(.active):hover {
   background-color: var(--black-900);
 }
 
@@ -88,6 +140,17 @@ body {
   max-width: var(--max-width);
   margin: 0 auto;
   width: 100%;
+}
+
+.main-container .header-container img {
+  border-radius: 50%;
+}
+
+.header-container .user-info {
+  flex: 1;
+  color: var(--white);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .header-container .name {
@@ -142,7 +205,7 @@ body {
 }
 
 .send-message form .input input {
-  width: 80%;
+  width: 90%;
   height: inherit;
 
   background-color: inherit;
@@ -152,4 +215,40 @@ body {
   font-size: 1rem;
   font-weight: 500;
   line-height: 160%;
+}
+
+.messages .messages-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  max-height: calc(100vh - 70px - 50px);
+  overflow: auto hidden;
+
+  padding: 0 0.5rem 50px;
+}
+
+.messages-view .message-box {
+  background-color: var(--black-800);
+  color: var(--white);
+  width: max-content;
+  border-radius: 10px;
+  padding: 1rem;
+
+  max-width: 500px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.message-box .author {
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.messages-view .message-box.me {
+  align-self: flex-end;
+  background-color: var(--green-100);
+  color: var(--black-900);
 }

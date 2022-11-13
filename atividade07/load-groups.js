@@ -1,6 +1,6 @@
 const groupList = document.querySelector("ul.group");
 const groupHeaderEl = document.querySelector(
-  ".main-container .header-container"
+  ".main-container .header-container .header-wrapper"
 );
 
 async function loadGroups() {
@@ -16,6 +16,8 @@ async function loadGroups() {
 
 function renderGroupHeader(groups) {
   groupHeaderEl.innerHTML = "";
+
+  const loggedUserIn = localStorage.getItem("@zipzop:user");
 
   const group = groups
     .filter((group) => Object.keys(group).includes("nome"))
@@ -39,9 +41,9 @@ function renderGroupHeader(groups) {
     groupHeaderEl.appendChild(groupImageContainer);
     groupHeaderEl.appendChild(groupName);
 
-    if (!!loggedUser) {
+    if (!!loggedUserIn) {
       const userInfo = document.createElement("strong");
-      const userName = document.createTextNode(loggedUser);
+      const userName = document.createTextNode(loggedUserIn);
       userInfo.className = "user-info";
       userInfo.appendChild(userName);
       groupHeaderEl.appendChild(userInfo);
@@ -92,4 +94,5 @@ async function handleChangeGroup(groupId) {
   currentGroupId = groupId;
   await loadGroups();
   await loadMessages(groupId);
+  scrollBottom();
 }

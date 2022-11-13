@@ -15,6 +15,7 @@
 
   --green-100: #61c554;
   --green-200: #36ce00;
+  --green-900: #1c4532;
 
   --max-width: 900px;
 }
@@ -127,15 +128,25 @@ ul {
 /* Main styles */
 
 .main-container {
+  flex: 1;
   overflow: hidden;
+  background-image: url(/assets/bg-image.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .main-container .header-container {
   height: 70px;
+  background-color: var(--black-800);
+}
+
+.header-container .header-wrapper {
   display: flex;
   align-items: center;
   gap: 1rem;
   padding: 20px;
+  height: inherit;
 
   max-width: var(--max-width);
   margin: 0 auto;
@@ -160,7 +171,6 @@ ul {
 }
 
 .main-container .message-container {
-  background-color: var(--black-900);
   width: calc(100vw - 300px);
   height: calc(100vh - 70px);
 }
@@ -180,10 +190,32 @@ ul {
   bottom: 1rem;
 
   width: 100%;
+  padding: 0 1rem;
 }
 
 .send-message form {
   width: 100%;
+}
+
+.send-message form .send-message-btn {
+  border: 0;
+  background: transparent;
+  border-radius: 50%;
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: inherit;
+
+  transition: color 0.2s;
+}
+
+.send-message form .send-message-btn:hover {
+  color: var(--white);
 }
 
 .send-message form .input {
@@ -223,7 +255,7 @@ ul {
   gap: 1rem;
 
   max-height: calc(100vh - 70px - 50px);
-  overflow: auto hidden;
+  overflow: hidden auto;
 
   padding: 0 0.5rem 50px;
 }
@@ -251,4 +283,14 @@ ul {
   align-self: flex-end;
   background-color: var(--green-100);
   color: var(--black-900);
+}
+
+@media (max-width: 768px) {
+  .aside-container {
+    display: none;
+  }
+
+  .main-container .message-container {
+    width: 100%;
+  }
 }

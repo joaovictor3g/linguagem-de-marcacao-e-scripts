@@ -11,9 +11,9 @@
     <script defer>
       //globals
       const BASE_URL = "https://server-json-lms.herokuapp.com";
-      const loggedUser = localStorage.getItem("@zipzop:user");
+      let loggedUser = localStorage.getItem("@zipzop:user");
 
-      let currentGroupId = 1;
+      let currentGroupId = -1;
     </script>
 
     <link
@@ -42,7 +42,7 @@
 
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="scrollbar.css" />
-    <title>Document</title>
+    <title>ZipZop</title>
   </head>
   <body>
     <aside class="aside-container">
@@ -60,7 +60,9 @@
       </div>
     </aside>
     <main class="main-container">
-      <header class="header-container"></header>
+      <header class="header-container">
+        <div class="header-wrapper"></div>
+      </header>
       <section class="message-container">
         <div class="messages">
           <div class="messages-view"></div>
@@ -74,7 +76,9 @@
                   name="message"
                   placeholder="Digite uma mensagem"
                 />
-                <i class="ph-paperclip"></i>
+                <button type="submit" class="send-message-btn">
+                  <i class="ph-paper-plane-right-light"></i>
+                </button>
               </div>
             </form>
           </div>
@@ -95,7 +99,7 @@
         <div class="modal-content bg-dark">
           <div class="modal-header">
             <h1 class="modal-title fs-5 text-light" id="staticBackdropLabel">
-              Criar novo grupo
+              Criar usuário
             </h1>
           </div>
           <div class="modal-body">

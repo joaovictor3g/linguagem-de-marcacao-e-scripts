@@ -4,10 +4,12 @@ const inputMessageEl = document.querySelector(".send-message input[type=text]");
 createMessageForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
+  const loggedUserIn = localStorage.getItem("@zipzop:user");
+
   const formData = new FormData(event.target);
   const message = formData.get("message");
   const newMessage = {
-    nome: loggedUser,
+    nome: loggedUserIn,
     corpo: message,
     grupoId: currentGroupId,
   };

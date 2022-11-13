@@ -13,12 +13,14 @@ async function loadMessages(groupId = 1) {
 function renderMessages(messages) {
   messagesViewEl.innerHTML = "";
 
+  const loggedUserIn = localStorage.getItem("@zipzop:user");
+
   messages.forEach((message) => {
     const messageBoxEl = document.createElement("div");
     messageBoxEl.classList.remove("me");
     messageBoxEl.className = "message-box";
 
-    if (message.nome === loggedUser) messageBoxEl.classList.add("me");
+    if (message.nome === loggedUserIn) messageBoxEl.classList.add("me");
 
     const messageTextEl = document.createElement("span");
     const messageTextContent = document.createTextNode(message.corpo);

@@ -1,7 +1,11 @@
 const messagesView = document.querySelector(".messages .messages-view");
 
 function scrollBottom() {
-  messagesView.scrollTop = messagesView.clientHeight;
+  const height = messagesView.scrollHeight;
+  messagesView.scroll({
+    behavior: "smooth",
+    top: height,
+  });
 }
 
 scrollBottom();

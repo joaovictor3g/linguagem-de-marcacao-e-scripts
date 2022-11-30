@@ -82,6 +82,9 @@ ul {
   flex-direction: column;
   width: 100%;
   margin-top: 70px;
+
+  max-height: 500px;
+  overflow: auto;
 }
 
 .group > span {
@@ -139,6 +142,7 @@ ul {
 .main-container .header-container {
   height: 70px;
   background-color: var(--black-800);
+  border-left: 1px solid var(--black-900);
 }
 
 .header-container .header-wrapper {
